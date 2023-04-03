@@ -4,7 +4,8 @@ import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 import { useLocation } from "react-router-dom";
 import Row from "react-bootstrap/esm/Row";
-import axios from "axios"
+// import axios from "axios"
+import api from "../../axios"
 import { ProductContext } from "../../context/productContext";
 import reducer from "../../reducer/reducer";
 
@@ -21,7 +22,7 @@ function Product() {
     useEffect(()=>{
         const fetchData = async ()=>{
             try {
-           const res = await axios.get(`/api/product/${productId}`);
+           const res = await api.get(`/product/${productId}`);
            dispatch({type: 'FETCH_SUCCESS', payload: res.data})
                 // setProduct(res.data)
             } catch (error) {

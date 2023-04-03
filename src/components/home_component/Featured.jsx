@@ -19,11 +19,11 @@ function Featured({products}) {
               </Col>
 
               {
-                products.map((product)=>{
+                products.map((product, index)=>{
                   
                   const [isPlaying, setIsPlaying] = useState(false)
                   const [song, setSong] = useState(new Audio(product.audio))     //`../../../src/uploads/${product.audio}`
-                  return  <Col md={3} className="contain" key={product._id}>
+                  return  <Col md={3} className="contain" key={index}>
                   <img src={product.image} alt="cover image" className='img-fluid rounded mb-3'/>
                   <p className="play" onClick={()=>{
                     if(isPlaying){

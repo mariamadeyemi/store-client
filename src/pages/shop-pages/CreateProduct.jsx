@@ -5,7 +5,9 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom"
-import axios from "axios";
+// import axios from "axios";
+import api from "../../axios"
+
 
 function CreateProduct() {
 
@@ -23,7 +25,7 @@ function CreateProduct() {
     formData.append("image", image)
     formData.append("audio", audio)
  
-    const res = await axios.post("/api/upload", formData)
+    const res = await api.post("/upload", formData)
     return res.data
 
     }catch(err){
@@ -46,7 +48,7 @@ function CreateProduct() {
             let fileurl = await upload()
             try {
             if(!state){
-             await axios.post("/api/addProduct", {
+             await api.post("/addProduct", {
                 name: input.name,
                 audio_type: input.audio_type,
                 price: input.price,

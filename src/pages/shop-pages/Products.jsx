@@ -7,7 +7,8 @@ import { Link, useLocation } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import '../../products.css';
 import { useContext, useEffect, useState } from 'react';
-import axios from "axios";
+// import axios from "axios";
+import api from "../../axios"
 import SingleProduct from '../../components/store_component/SingleProduct';
 
 
@@ -21,7 +22,7 @@ function Products() {
   useEffect(() => {
     const fetchData = async ()=>{
     try {
-      const res = await axios.get(`/api/products${cat}`)
+      const res = await api.get(`/products${cat}`)
       setProducts(res.data);
     } catch (error) {
       console.log(error)
@@ -75,9 +76,9 @@ function Products() {
     <Row className="g-4 pt-3 pb-3">
 
       {
-        products.map((product)=>{
+        products.map((product, index)=>{
          
-          return <SingleProduct key={product._id} {...product} />
+          return <SingleProduct key={index} {...product} />
 
           // return <Col lg={3} className='card-container' key={product.id}>
           // <img src={`../../../src/uploads/${product.image}`} alt="" className='img-fluid rounded mb-3'/>

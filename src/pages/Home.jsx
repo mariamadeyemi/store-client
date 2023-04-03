@@ -2,7 +2,8 @@ import Featured from "../components/home_component/Featured";
 import Hero from "../components/home_component/Hero";
 import Newsletter from "../components/home_component/Newsletter";
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../axios"
 // import { ProductContext } from "../context/productContext";
 
 
@@ -12,7 +13,7 @@ function Home() {
 
     useEffect(()=>{
     const fetchData = async()=>{
-      const res = await axios.get("/api/products")
+      const res = await api.get("/products")
       setProducts(res.data);
     } 
     fetchData()      

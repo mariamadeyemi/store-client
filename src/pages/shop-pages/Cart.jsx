@@ -39,8 +39,8 @@ function Cart() {
         <p className="item-head">Item</p>
         <p className="price-head">Price</p>
     </div>
-    {cart.cartItems.map((item)=>{
-        return  <div className="description" key={item._id}>
+    {cart.cartItems.map((item, index)=>{
+        return  <div className="description" key={index}>
         <div className="item-des">
      <FaPlay className='item-play'/>
      <p>

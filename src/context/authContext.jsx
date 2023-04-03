@@ -1,4 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
+import api from "../axios"
 import { createContext, useEffect, useReducer, useState } from "react";
 
 const AuthContext = createContext();
@@ -14,19 +15,19 @@ const AuthContextProvider = ({ children }) => {
 );
 
   const login = async (inputs) => {
-    const res = await axios.post("/api/login", inputs);
+    const res = await api.post("/login", inputs);
     // dispatch({ type: "SETUSER", payload: res.data })
     setCurrentUser(res.data);
   };
 
   const signup = async (inputs) => {
-    const res = await axios.post("/api/register", inputs);
+    const res = await api.post("/register", inputs);
     // dispatch({ type: "SETUSER", payload: res.data })
     setCurrentUser(res.data);
   };
 
   const logout = async (inputs) => {
-    await axios.post("/api/logout");
+    await api.post("/logout");
     // dispatch({ type: "LOGOUT" })
     setCurrentUser(null);
   };
