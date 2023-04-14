@@ -12,8 +12,8 @@ function Hero() {
     return ( 
         <section className="hero-section mt-3">
             <Container>
-        <Row className="align-items-center">
-        <Col md={6}>
+        <Row className="align-items-center hero-row">
+        <Col md={6} className="h1-col">
         <h1 className="hero-h1 mb-3">
         your number one music beat store
         </h1>

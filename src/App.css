@@ -419,6 +419,20 @@ cursor: pointer;
  .item-2{
   margin-top: 2em;
  }
+
+ .hero-row{
+  flex-direction: column-reverse;
+ }
+
+ .h1-col{
+  text-align: center;
+ }
+
+ .featured-text, .news-col, .news-btn-col{
+  text-align: center;
+ }
+
+
   
 }
 

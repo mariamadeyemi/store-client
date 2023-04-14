@@ -12,20 +12,20 @@ function Newsletter() {
         <Container>
        <Form>
         <Row className="align-items-center"> 
-        <Col md={10}>
+        <Col md={10} className="news-col">
               <h2 className="newsletter-head mb-3">Newsletter</h2>  
             </Col>
             <Col md={4}>
             <p className="newsletter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, architecto provident dolorem cupiditate quo, culpa quam ipsam saepe molestias repellendus quibusdam.</p>
             </Col>
-        <Col md={4} className="my-1">
+        <Col md={4} className="my-1 news-input-col">
           <Form.Label htmlFor="inlineFormInputEmail" visuallyHidden>
             Email
           </Form.Label>
           <Form.Control type="email" id="inlineFormInputEmail" placeholder="Email address" />
         </Col>
        
-        <Col md={4} className="my-1">
+        <Col md={4} className="my-1 news-btn-col">
           <Button type="submit" className="newsletter-btn">Subscribe</Button>
         </Col>
         </Row>
